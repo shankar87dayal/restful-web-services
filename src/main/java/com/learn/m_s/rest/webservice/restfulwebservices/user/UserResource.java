@@ -19,9 +19,12 @@ public class UserResource {
         return service.findAll();
     }
 
+    // GET /users
     @GetMapping("/users/{id}")
-    public User retrieveUser(@PathVariable int id){
-       return service.findOne(id);
+    public User retrieveUser(@PathVariable int id) {
+        return service.findOne(id);
     }
+
+
 
 }

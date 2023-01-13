@@ -1,8 +1,6 @@
 package com.learn.m_s.rest.webservice.restfulwebservices.user;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,6 +23,10 @@ public class UserResource {
         return service.findOne(id);
     }
 
-
+//Post /users
+    @PostMapping("/users")
+    public void createUser(@RequestBody User user){
+        service.save(user);
+    }
 
 }

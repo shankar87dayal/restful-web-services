@@ -25,10 +25,10 @@ public class User {
     @GeneratedValue
     private Integer id;
     @Size(min = 2, message = "Name Should have atleast 2 characters")
-    @JsonProperty("user_name")
+//    @JsonProperty("user_name")
     private String name;
     @Past(message = "Birth Date Should be in the past")
-    @JsonProperty("birth_date")
+//    @JsonProperty("birth_date")
     private LocalDate birthDate;
 
     @OneToMany(mappedBy = "user")
@@ -63,6 +63,14 @@ public class User {
 
     public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
+    }
+
+    public List<Post> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(List<Post> posts) {
+        this.posts = posts;
     }
 
     @Override
